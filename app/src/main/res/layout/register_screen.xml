@@ -74,6 +74,7 @@
                 android:background="@drawable/input_type1">
 
                 <EditText
+                    android:id="@+id/phone_input"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
@@ -102,6 +103,7 @@
                 >
 
                 <EditText
+                    android:id="@+id/name_input"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
@@ -130,6 +132,7 @@
                 >
 
                 <EditText
+                    android:id="@+id/password_input"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
@@ -155,6 +158,7 @@
                 android:background="@drawable/input_type1">
 
                 <EditText
+                    android:id="@+id/password_confirm_input"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
@@ -175,6 +179,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/registerButton"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
