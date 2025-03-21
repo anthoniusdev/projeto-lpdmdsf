@@ -3,6 +3,6 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">localhost</domain> <!-- Adiciona localhost aqui -->
         <domain includeSubdomains="true">127.0.0.1</domain> <!-- Adiciona 127.0.0.1 -->
-        <domain includeSubdomains="true">192.168.0.136</domain> <!-- Adiciona o IP do seu computador aqui -->
+        <domain includeSubdomains="true">192.168.62.249</domain> <!-- Adiciona o IP do seu computador aqui -->
     </domain-config>
 </network-security-config>

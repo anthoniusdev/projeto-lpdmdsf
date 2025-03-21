@@ -43,55 +43,105 @@ class RegisterActivity : AppCompatActivity() {
                     .show()
                 return@setOnClickListener
             }
-            val usuario = Usuario(
-                name_input.text.toString(),
-                phone_input.text.toString(),
-                password_input.text.toString()
-            )
-            val retrofit = Retrofit.Builder()
-                .baseUrl("http://192.168.0.136:3000/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-            val apiService = retrofit.create(ApiService::class.java)
-            apiService.postUsuarios(usuario).enqueue(object : retrofit2.Callback<Usuario> {
-                override fun onResponse(
-                    call: retrofit2.Call<Usuario>,
-                    response: retrofit2.Response<Usuario>
+            setContentView(R.layout.confirm_register_screen)
+            val btnConfirm = findViewById<Button>(R.id.btnConfirmRegister)
+            btnConfirm.setOnClickListener {
+                val input_codigo_confirmacao = findViewById<EditText>(R.id.input_codigo_confirmacao)
+                if (input_codigo_confirmacao.text.toString()
+                        .isEmpty() || input_codigo_confirmacao.text.toString() != "2025"
                 ) {
-                    if (response.isSuccessful) {
-                        AlertDialog.Builder(this@RegisterActivity)
-                            .setTitle("Sucesso")
-                            .setMessage("Usuário cadastrado com sucesso.")
-                            .setPositiveButton("OK") { dialog, _ ->
-                                dialog.dismiss()
-                                val intent =
-                                    Intent(this@RegisterActivity, LoginActivity::class.java)
-                                startActivity(intent)
-                            }
-                            .show()
+                    AlertDialog.Builder(this)
+                        .setTitle("Erro")
+                        .setMessage("Por favor, insira o código corretamente.")
+                        .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                        .show()
 
+                } else {
+                    setContentView(R.layout.alert_after_registraton_screen)
+                    val btnEmpresa = findViewById<Button>(R.id.btnEmpresa)
+                    val btnFuncionario = findViewById<Button>(R.id.btnFuncionario)
+                    btnFuncionario.setOnClickListener() {
+                        editScreen()
+                    }
+                    btnEmpresa.setOnClickListener() {
+                        editScreen()
 
-                    } else {
-                        Log.d(TAG, "onResponse: ${response.errorBody()?.string()}")
-                        AlertDialog.Builder(this@RegisterActivity)
-                            .setTitle("Erro")
-                            .setMessage("Erro ao cadastrar usuário.")
-                            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-                            .show()
                     }
                 }
 
-                override fun onFailure(call: retrofit2.Call<Usuario>, t: Throwable) {
-                    Log.d(TAG, "onFailure: $t")
-                    AlertDialog.Builder(this@RegisterActivity)
-                        .setTitle("Erro")
-                        .setMessage("Erro ao cadastrar usuário.")
-                        .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-                        .show()
+            }
+//            val usuario = Usuario(
+//                name_input.text.toString(),
+//                phone_input.text.toString(),
+//                password_input.text.toString()
+//            )
+//            val retrofit = Retrofit.Builder()
+//                .baseUrl("http://192.168.62.249:3000/api/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build()
+//            val apiService = retrofit.create(ApiService::class.java)
+//            apiService.postUsuarios(usuario).enqueue(object : retrofit2.Callback<Usuario> {
+//                override fun onResponse(
+//                    call: retrofit2.Call<Usuario>,
+//                    response: retrofit2.Response<Usuario>
+//                ) {
+//                    if (response.isSuccessful) {
+//                        AlertDialog.Builder(this@RegisterActivity)
+//                            .setTitle("Sucesso")
+//                            .setMessage("Usuário cadastrado com sucesso.")
+//                            .setPositiveButton("OK") { dialog, _ ->
+//                                dialog.dismiss()
+//                                val intent =
+//                                    Intent(this@RegisterActivity, LoginActivity::class.java)
+//                                startActivity(intent)
+//                            }
+//                            .show()
+//
+//
+//                    } else {
+//                        Log.d(TAG, "onResponse: ${response.errorBody()?.string()}")
+//                        AlertDialog.Builder(this@RegisterActivity)
+//                            .setTitle("Erro")
+//                            .setMessage("Erro ao cadastrar usuário.")
+//                            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+//                            .show()
+//                    }
+//                }
+//
+//                override fun onFailure(call: retrofit2.Call<Usuario>, t: Throwable) {
+//                    Log.d(TAG, "onFailure: $t")
+//                    AlertDialog.Builder(this@RegisterActivity)
+//                        .setTitle("Erro")
+//                        .setMessage("Erro ao cadastrar usuário.")
+//                        .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+//                        .show()
+//                }
+//            })
+
+
+        }
+    }
+
+    fun editScreen() {
+        setContentView(R.layout.edit_perfil_screen)
+        val editNome = findViewById<EditText>(R.id.editNome)
+        val editCodigoEmpresa = findViewById<EditText>(R.id.editCodigoEmpresa)
+        val btnFinish = findViewById<Button>(R.id.button_finish)
+        btnFinish.setOnClickListener() {
+            if (editNome.text.toString().isEmpty() || editCodigoEmpresa.text.toString().isEmpty()) {
+                AlertDialog.Builder(this)
+                    .setTitle("Erro")
+                    .setMessage("Por favor, preencha todos os campos.")
+                    .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                    .show()
+            } else {
+                setContentView(R.layout.finished_register_screen)
+                val btnFinishRegister = findViewById<Button>(R.id.finishedRegisterButton)
+                btnFinishRegister.setOnClickListener() {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
                 }
-            })
-
-
+            }
         }
     }
 }

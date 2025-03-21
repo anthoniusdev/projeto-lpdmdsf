@@ -1,6 +1,11 @@
 package com.example.projetofinal.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "funcionarios")
 class Funcionario {
+    @PrimaryKey(autoGenerate = true)
     private var id: Int = 0;
     private var nome: String = "";
     private var numero: String = "";
@@ -43,4 +48,7 @@ class Funcionario {
         this.cargo = cargo
     }
 
+    fun setId(id: Int) {
+        this.id = id
+    }
 }

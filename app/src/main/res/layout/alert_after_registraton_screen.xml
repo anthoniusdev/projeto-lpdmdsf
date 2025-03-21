@@ -77,6 +77,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btnFuncionario"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -90,6 +91,7 @@
                 />
 
             <Button
+                android:id="@+id/btnEmpresa"
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

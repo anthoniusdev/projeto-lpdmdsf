@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margens para ListView no card de produtos em falta -->
+    <dimen name="list_top_margin">50dp</dimen>
+
+    <!-- Margens para os textos de funcionários -->
+    <dimen name="employee_name_margin_bottom">35dp</dimen>
+    <dimen name="employee_stats_margin_bottom">15dp</dimen>
+</resources>

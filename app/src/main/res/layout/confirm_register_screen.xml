@@ -102,6 +102,7 @@
                 android:background="@drawable/input_type1">
 
                 <EditText
+                    android:id="@+id/input_codigo_confirmacao"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
@@ -121,6 +122,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btnConfirmRegister"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

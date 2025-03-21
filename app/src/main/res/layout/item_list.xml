@@ -17,12 +17,14 @@
         android:textStyle="bold"
         android:text="Exemplo"/>
     <ImageView
+        android:id="@+id/editBtn"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/pencil_svg"/>
 
     <ImageView
+        android:id="@+id/deleteBtn"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/trash_svg" />

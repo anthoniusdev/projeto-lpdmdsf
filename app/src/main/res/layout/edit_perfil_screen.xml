@@ -87,6 +87,7 @@
                 android:background="@drawable/input_type1">
 
                 <EditText
+                    android:id="@+id/editNome"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
@@ -109,6 +110,7 @@
                 android:background="@drawable/input_type1">
 
                 <EditText
+                    android:id="@+id/editCodigoEmpresa"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="8dp"
