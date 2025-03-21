@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="@color/primary_color"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/enterpriseFound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Deseja alterar seu plano?"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/enterpriseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterpriseFound"
+        android:layout_marginBottom="16dp"
+        android:text="Seu plano atual:"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/enterpriseInfo"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterpriseName"
+        android:background="@drawable/input_type1"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plano Free"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="Limite de até 10 produtos"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/enterpriseInfo"
+        android:layout_marginTop="16dp">
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/white"
+            android:text="Mudar agora"
+            android:textColor="@color/primary_color"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_try_again"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/white"
+            android:shadowColor="@color/white"
+            android:shadowRadius="@integer/material_motion_duration_long_1"
+            android:text="Quero testar mais"
+            android:textColor="@color/primary_color"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</RelativeLayout>
